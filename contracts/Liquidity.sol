@@ -19,4 +19,9 @@ contract Liquidity {
         string transactionHash;
         uint256 timeCreated;
     }
+
+    modifier onlyAdmin() {
+        require(msg.sender == admin, "Only admin can call this function");
+        _;
+    }
 }
